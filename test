@@ -1,0 +1,84 @@
+#!/bin/bash
+
+cd ./testfiles/
+X=1
+while [ $X -le 27 ]
+do
+  wget -N http://www.cs.utexas.edu/~geocklam/CS331/assignment1/input$X.txt
+  X=$((X+1))
+done
+
+X=1
+while [ $X -le 27 ]
+do
+  wget -N http://www.cs.utexas.edu/~geocklam/CS331/assignment1/output$X.txt
+  X=$((X+1))
+done
+
+cd ..
+echo "Now testing files  ... "
+
+./build
+cp ./testfiles/input1.txt input1.txt
+cp ./testfiles/output1.txt output1.txt
+cp ./testfiles/output1_alternative.txt output1_alternative.txt
+./run input1.txt o1.txt
+
+
+diff -w o1.txt output1.txt > diff1.txt
+diff -w o1.txt output1_alternative.txt > diff1alternate.txt
+
+echo "============================="
+
+echo "Test case 1 input1.txt"
+
+if [ -s "diff1.txt" ] && [ -s "diff1alternate.txt" ]
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff1.txt
+rm diff1alternate.txt
+fi
+
+echo "============================="
+
+
+rm o1.txt
+rm output1_alternative.txt
+rm output1.txt
+rm input1.txt
+
+X=2
+while [ $X -le 27 ]
+do
+  cp ./testfiles/input$X.txt input$X.txt
+  cp ./testfiles/output$X.txt output$X.txt
+  ./run input$X.txt o$X.txt
+  
+  
+  diff -w o$X.txt output$X.txt > diff$X.txt
+  echo "Test case $X: input$X.txt"
+  if [ -s "diff$X.txt" ];
+  then
+  echo -e "${red}Failed"
+  else
+  echo -e "${green}PASSED"
+  rm diff$X.txt
+  fi
+  
+  echo "============================="
+  
+  
+  rm o$X.txt
+  rm output$X.txt
+  rm input$X.txt
+  X=$((X+1))
+  
+done
+
+
+
+
+
+

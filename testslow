@@ -1,0 +1,342 @@
+#!/bin/bash
+echo "Now testing files  ... "
+
+./build
+cp ./testfiles/input1.txt input1.txt
+cp ./testfiles/output1.txt output1.txt
+cp ./testfiles/output1_alternative.txt output1_alternative.txt
+./run input1.txt o1.txt
+sleep 5
+
+diff -w o1.txt output1.txt > diff1.txt
+diff -w o1.txt output1_alternative.txt > diff1alternate.txt
+
+echo "============================="
+
+echo "Test case 1 input1.txt"
+
+if [ -s "diff1.txt" ] && [ -s "diff1alternate.txt" ]
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff1.txt
+rm diff1alternate.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o1.txt
+rm output1_alternative.txt
+rm output1.txt
+rm input1.txt
+
+
+cp ./testfiles/input2.txt input2.txt
+cp ./testfiles/output2.txt output2.txt
+./run input2.txt o2.txt
+sleep 5
+
+diff -w o2.txt output2.txt > diff2.txt
+echo "Test case 2: input2.txt"
+if [ -s "diff2.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff2.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o2.txt
+rm output2.txt
+rm input2.txt
+
+
+cp ./testfiles/input3.txt input3.txt
+cp ./testfiles/output3.txt output3.txt
+./run input3.txt o3.txt
+sleep 5
+
+diff -w o3.txt output3.txt > diff3.txt
+echo "Test case 3: input3.txt"
+if [ -s "diff3.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff3.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o3.txt
+rm output3.txt
+rm input3.txt
+
+cp ./testfiles/input4.txt input4.txt
+cp ./testfiles/output4.txt output4.txt
+./run input4.txt o4.txt
+sleep 5
+
+diff -w o4.txt output4.txt > diff4.txt
+echo "Test case 4: input4.txt"
+if [ -s "diff4.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff4.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o4.txt
+rm output4.txt
+rm input4.txt
+
+cp ./testfiles/input5.txt input5.txt
+cp ./testfiles/output5.txt output5.txt
+./run input5.txt o5.txt
+sleep 5
+
+diff -w o5.txt output5.txt > diff5.txt
+echo "Test case 5: input5.txt"
+if [ -s "diff5.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff5.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o5.txt
+rm output5.txt
+rm input5.txt
+
+cp ./testfiles/input6.txt input6.txt
+cp ./testfiles/output6.txt output6.txt
+./run input6.txt o6.txt
+sleep 5
+
+diff -w o6.txt output6.txt > diff6.txt
+echo "Test case 6: input6.txt"
+if [ -s "diff6.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff6.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o6.txt
+rm output6.txt
+rm input6.txt
+
+cp ./testfiles/input7.txt input7.txt
+cp ./testfiles/output7.txt output7.txt
+./run input7.txt o7.txt
+sleep 5
+
+diff -w o7.txt output7.txt > diff7.txt
+echo "Test case 7: input7.txt"
+if [ -s "diff7.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff7.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o7.txt
+rm output7.txt
+rm input7.txt
+
+cp ./testfiles/input8.txt input8.txt
+cp ./testfiles/output8.txt output8.txt
+./run input8.txt o8.txt
+sleep 5
+
+diff -w o8.txt output8.txt > diff8.txt
+echo "Test case 8: input8.txt"
+if [ -s "diff8.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff8.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o8.txt
+rm output8.txt
+rm input8.txt
+
+cp ./testfiles/input9.txt input9.txt
+cp ./testfiles/output9.txt output9.txt
+./run input9.txt o9.txt
+sleep 5
+
+diff -w o9.txt output9.txt > diff9.txt
+echo "Test case 9: input9.txt"
+if [ -s "diff9.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff9.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o9.txt
+rm output9.txt
+rm input9.txt
+
+cp ./testfiles/input10.txt input10.txt
+cp ./testfiles/output10.txt output10.txt
+./run input10.txt o10.txt
+sleep 5
+
+diff -w o10.txt output10.txt > diff10.txt
+echo "Test case 10: input10.txt"
+if [ -s "diff10.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff10.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o10.txt
+rm output10.txt
+rm input10.txt
+
+cp ./testfiles/input11.txt input11.txt
+cp ./testfiles/output11.txt output11.txt
+./run input11.txt o11.txt
+sleep 5
+
+diff -w o11.txt output11.txt > diff11.txt
+echo "Test case 11: input11.txt"
+if [ -s "diff11.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff11.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o11.txt
+rm output11.txt
+rm input11.txt
+
+cp ./testfiles/input12.txt input12.txt
+cp ./testfiles/output12.txt output12.txt
+./run input12.txt o12.txt
+sleep 5
+
+diff -w o12.txt output12.txt > diff12.txt
+echo "Test case 12: input12.txt"
+if [ -s "diff12.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff12.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o12.txt
+rm output12.txt
+rm input12.txt
+
+cp ./testfiles/input13.txt input13.txt
+cp ./testfiles/output13.txt output13.txt
+./run input13.txt o13.txt
+sleep 5
+
+diff -w o13.txt output13.txt > diff13.txt
+echo "Test case 13: input13.txt"
+if [ -s "diff13.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff13.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o13.txt
+rm output13.txt
+rm input13.txt
+cp ./testfiles/input14.txt input14.txt
+cp ./testfiles/output14.txt output14.txt
+./run input14.txt o14.txt
+sleep 5
+
+diff -w o14.txt output14.txt > diff14.txt
+echo "Test case 14: input14.txt"
+if [ -s "diff14.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff14.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o14.txt
+rm output14.txt
+rm input14.txt
+
+cp ./testfiles/input15.txt input15.txt
+cp ./testfiles/output15.txt output15.txt
+./run input15.txt o15.txt
+sleep 5
+
+diff -w o15.txt output15.txt > diff15.txt
+echo "Test case 15: input15.txt"
+if [ -s "diff15.txt" ];
+then
+echo -e "${red}Failed"
+else
+echo -e "${green}PASSED"
+rm diff15.txt
+fi
+
+echo "============================="
+
+sleep 1
+rm o15.txt
+rm output15.txt
+rm input15.txt

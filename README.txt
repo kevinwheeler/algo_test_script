@@ -1,5 +1,9 @@
 README
 
+Credit to Renato Recio for originally making this script.
+
+I only changed it to also use the new tests (16? to 27)
+
 NOTE: If your program takes longer than 1 second to run, please run the slower version (./testslow) This version will take 1 minute and 30 seconds to complete
 
 

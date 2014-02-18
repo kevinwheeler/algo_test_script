@@ -1,5 +1,16 @@
 README
 
+Credit to Renato Recio for originally making this script.
+
+I only changed it to also use the new tests (16? to 27) and also to not sleep for one second between tests
+
+NOTE: This script will say you failed the test unless your output exactly matches the sample output. Since sometimes there are more than one correct assignment of rooms to bids that produce the same max weight, it could be the case that your program produces a correct assignment which is not the one used by the sample outout. In this case, the test script will say that you failed that test when really you passed.
+
+
+-------------------------------------
+Renato's Original readme below
+-------------------------------------
+
 NOTE: If your program takes longer than 1 second to run, please run the slower version (./testslow) This version will take 1 minute and 30 seconds to complete
 
 

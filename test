@@ -8,10 +8,26 @@ do
   X=$((X+1))
 done
 
+X=201
+while [ $X -le 215 ]
+do
+  wget -N http://www.cs.utexas.edu/~geocklam/CS331/assignment2/input$X.txt
+  X=$((X+1))
+done
+
+
 X=1
 while [ $X -le 27 ]
 do
   wget -N http://www.cs.utexas.edu/~geocklam/CS331/assignment1/output$X.txt
+  X=$((X+1))
+done
+
+
+X=201
+while [ $X -le 215 ]
+do
+  wget -N http://www.cs.utexas.edu/~geocklam/CS331/assignment2/output$X.txt
   X=$((X+1))
 done
 
@@ -64,12 +80,12 @@ do
   echo -e "${red}Failed"
   else
   echo -e "${green}PASSED"
-  rm diff$X.txt
   fi
   
   echo "============================="
   
   
+  rm diff$X.txt
   rm o$X.txt
   rm output$X.txt
   rm input$X.txt
@@ -77,6 +93,35 @@ do
   
 done
 
+X=201
+while [ $X -le 215 ]
+do
+  cp ./testfiles/input$X.txt input$X.txt
+  cp ./testfiles/output$X.txt output$X.txt
+  ./run input$X.txt o$X.txt
+
+  Y=$(cut -d' ' -f1 o$X.txt)
+  Z=$(cut -d' ' -f1 output$X.txt)
+ # diff -w o$X.txt output$X.txt > diff$X.txt
+  diff  <(cut -d' ' -f1 ./o$X.txt)  <(cut -d' ' -f1 ./output$X.txt) > diff$X.txt
+  echo "Test case $X: input$X.txt"
+  if [ -s "diff$X.txt" ];
+  then
+  echo -e "${red}Failed"
+  else
+  echo -e "${green}PASSED"
+  fi
+
+  echo "============================="
+
+
+  rm diff$X.txt
+  rm o$X.txt
+  rm output$X.txt
+  rm input$X.txt
+  X=$((X+1))
+
+done
 
 
 

@@ -1,5 +1,8 @@
 README
 
+
+-- added the new tests 201-215 as of feb 17 at 7:45 pm.
+
 Credit to Renato Recio for originally making this script.
 
 I only changed it to also use the new tests (16? to 27) and also to not sleep for one second between tests

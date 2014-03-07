@@ -15,6 +15,13 @@ do
   X=$((X+1))
 done
 
+X=301
+while [ $X -le 314 ]
+do
+  wget -N http://www.cs.utexas.edu/~geocklam/CS331/assignment3/input$X.txt
+  X=$((X+1))
+done
+
 
 X=1
 while [ $X -le 27 ]
@@ -28,6 +35,13 @@ X=201
 while [ $X -le 227 ]
 do
   wget -N http://www.cs.utexas.edu/~geocklam/CS331/assignment2/output$X.txt
+  X=$((X+1))
+done
+
+X=301
+while [ $X -le 314 ]
+do
+  wget -N http://www.cs.utexas.edu/~geocklam/CS331/assignment3/output$X.txt
   X=$((X+1))
 done
 
@@ -124,6 +138,34 @@ do
 done
 
 
+X=301
+while [ $X -le 314 ]
+do
+  cp ./testfiles/input$X.txt input$X.txt
+  cp ./testfiles/output$X.txt output$X.txt
+  ./run input$X.txt o$X.txt
 
+  Y=$(cut -d' ' -f1 o$X.txt)
+  Z=$(cut -d' ' -f1 output$X.txt)
+ # diff -w o$X.txt output$X.txt > diff$X.txt
+  diff  <(cut -d' ' -f1 ./o$X.txt)  <(cut -d' ' -f1 ./output$X.txt) > diff$X.txt
+  echo "Test case $X: input$X.txt"
+  if [ -s "diff$X.txt" ];
+  then
+  echo -e "${red}Failed"
+  else
+  echo -e "${green}PASSED"
+  fi
+
+  echo "============================="
+
+
+  rm diff$X.txt
+  rm o$X.txt
+  rm output$X.txt
+  rm input$X.txt
+  X=$((X+1))
+
+done
 
 

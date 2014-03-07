@@ -9,7 +9,7 @@ do
 done
 
 X=201
-while [ $X -le 215 ]
+while [ $X -le 227 ]
 do
   wget -N http://www.cs.utexas.edu/~geocklam/CS331/assignment2/input$X.txt
   X=$((X+1))
@@ -25,7 +25,7 @@ done
 
 
 X=201
-while [ $X -le 215 ]
+while [ $X -le 227 ]
 do
   wget -N http://www.cs.utexas.edu/~geocklam/CS331/assignment2/output$X.txt
   X=$((X+1))
@@ -94,7 +94,7 @@ do
 done
 
 X=201
-while [ $X -le 215 ]
+while [ $X -le 227 ]
 do
   cp ./testfiles/input$X.txt input$X.txt
   cp ./testfiles/output$X.txt output$X.txt
